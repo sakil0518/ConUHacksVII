@@ -112,7 +112,7 @@
         </div>
   <hr/>
         <div>
-           
+
            <div class = "emotion_table">
            <table>
              <tr>
@@ -149,15 +149,14 @@
      <p class = "instruction">
         ~ ! @ # $ % ^ & * ?
      </p>
-
      <div class = "text"><input type = text id = "schar" name = "word_specialchar" onchange = "myfunc_schar()"/></div>
-
      <div class ="submit" />
-     <input type = "submit" class="btn btn-outline-light" onclick = myFunction()/>
+     <input type = "submit" class="btn btn-outline-light"/>
      </div>
 </form>
 </body>
 <script>
+
 function displayRandomImages_animal() {
     const imgArray = [
     { src: "img/animal/0.jpg" },
@@ -171,8 +170,7 @@ function displayRandomImages_animal() {
     { src: "img/animal/8.jpg" },
     { src: "img/animal/9.jpg" },
     { src: "img/animal/10.jpg" },
-    {src: "img/animal/11.jpg"},
-];
+    {src: "img/animal/11.jpg"}]
 
     let arrayLength = imgArray.length;
     let newArray = [];
@@ -235,30 +233,21 @@ function displayRandomImages_color() {
   {
       let x = document.getElementById("numb").value
 
-    if (x.toString().length > 2){
-      alert("Number is not valid")
+    if (x.toString().length != 2){
+      alert("Invalid Number Length. Please Try Again")
       return false
     }
-
+}
   function myfunc_schar(){
-    
-    let x = document.getElementById("schar").innerHTML
-    let compare = x.toString()
+    let x = document.getElementById("schar").value
     const special_chars = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "?"]
-    let found = false;
-    for(let i = 0 ; i < special_chars.length; i++)){
-      if (special_chars[i]===compare){
-        found = true
-        break
-      }
-    }
-
-    if(found){
+    if(special_chars.includes(x)){
       return
     }
     else{
-      alert("Invalid special character. Please try again")
+      alert("Invalid Special Character. Please Try Again")
     }
+
   }
 </script>
 </html>
