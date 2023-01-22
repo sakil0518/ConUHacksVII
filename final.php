@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Welcome to Password Generator</h1>
+  <h1>Welcome to MemoryPass</h1>
   <form method="POST" action = "result.php">
       <div class="animal" id ="animal_jpg">
           <?php
@@ -69,7 +69,7 @@
            </div>
            <br/>
 
-          <div class="button"><button onclick="displayRandomImages_animal();" type="button" class="btn btn-outline-success">I want another animal</button></div>
+          <div class="button"><button onclick="displayRandomImages_animal();" type="button" class="btn btn-outline-light">I want another animal</button></div>
           <div class = "instruction">Please enter the name of the animal of the image above.</div>
 
       <div class = "text"><input type = "text" name = "word_animal" /></div>
@@ -106,13 +106,13 @@
            </div>
           <br/>
 
-          <div class="button"><button onclick="displayRandomImages_color();" type="button" class="btn btn-outline-success">I want another color</button></div>
+          <div class="button"><button onclick="displayRandomImages_color();" type="button" class="btn btn-outline-light">I want another color</button></div>
           <div class = "instruction">Please enter the name of the color of the image above.</div>
           <div class ="text" ><input type = text  name="word_color" />
         </div>
   <hr/>
         <div>
-           <p class = "instruction">Please choose one of the word in the table.</p>
+           
            <div class = "emotion_table">
            <table>
              <tr>
@@ -131,11 +131,12 @@
              </tr>
            </table>
            </div>
+           <p class = "instruction">Please choose one word in the table.</p>
             <div class = "text"><input type = text name= "word_emotion"/></div>
         <hr />
 <div>
   <p class = "instruction">
-     Please enter 2-digit random number (00 ~ 99)
+     Please enter a 2-digit random number (00 ~ 99)
   </p>
   <!-- required minlength= "2" maxlength="2" -->
   <div class = "text"><input type = text id = "numb" name = "number"  onchange = "myFunction()" /></div>
@@ -143,7 +144,7 @@
 <hr/>
   <div>
      <p class = "instruction">
-         Please enter special character from this list:
+         Please enter a special character from this list:
      </p>
      <p class = "instruction">
         ~ ! @ # $ % ^ & * ?
@@ -152,7 +153,7 @@
      <div class = "text"><input type = text id = "schar" name = "word_specialchar" onchange = "myfunc_schar()"/></div>
 
      <div class ="submit" />
-     <input type = "submit" />
+     <input type = "submit" class="btn btn-outline-light" onclick = myFunction()/>
      </div>
 </form>
 </body>
@@ -238,7 +239,6 @@ function displayRandomImages_color() {
       alert("Number is not valid")
       return false
     }
-  }
 
   function myfunc_schar(){
     
