@@ -137,7 +137,8 @@
   <p class = "instruction">
      Please enter 2-digit random number (00 ~ 99)
   </p>
-  <div class = "text"><input type = text id = "numb" name = "number"/></div>
+  <!-- required minlength= "2" maxlength="2" -->
+  <div class = "text"><input type = text id = "numb" name = "number"  onchange = "myFunction()" /></div>
 </div>
 <hr/>
   <div>
@@ -148,10 +149,10 @@
         ~ ! @ # $ % ^ & * ?
      </p>
 
-     <div class = "text"><input type = text name = "word_specialchar"/></div>
+     <div class = "text"><input type = text id = "schar" name = "word_specialchar" onchange = "myfunc_schar()"/></div>
 
      <div class ="submit" />
-     <input type = "submit" onclick = myFunction()/>
+     <input type = "submit" />
      </div>
 </form>
 </body>
@@ -224,24 +225,40 @@ function displayRandomImages_color() {
 
   var newImage2 = getRandomNum(0, newArray2.length - 1);
 
-
   var images2 = document.getElementById("c_img");
      images2.parentNode.removeChild(images2);
   document.getElementById("color_img").appendChild(newImage2);
   }
 
-  function myFunction() 
+  function myFunction()
   {
-      let x = document.getElementById("numb").value;
-      let text;
-    
-  if (isNaN(x) || x >= 100) {
+      let x = document.getElementById("numb").value
+
     if (x.toString().length > 2){
-      alert = ("Number is not valid");
-      return false;
+      alert("Number is not valid")
+      return false
     }
   }
 
+  function myfunc_schar(){
+    
+    let x = document.getElementById("schar").innerHTML
+    let compare = x.toString()
+    const special_chars = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "?"]
+    let found = false;
+    for(let i = 0 ; i < special_chars.length; i++)){
+      if (special_chars[i]===compare){
+        found = true
+        break
+      }
+    }
+
+    if(found){
+      return
+    }
+    else{
+      alert("Invalid special character. Please try again")
+    }
   }
 </script>
 </html>
